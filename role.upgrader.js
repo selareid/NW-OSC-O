@@ -21,12 +21,20 @@ module.exports = {
                 }
             }
             else {
-                var container = creep.pos.findClosestByPath(FIND_STRUCTURES, {
-                    filter: (s) => s.structureType == STRUCTURE_CONTAINER
-                    && s.store[RESOURCE_ENERGY] < s.storeCapacity});
-                if (structure != undefined) {
-                    if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                        creep.moveTo(container);
+                var dropenergy = creep.pos.findClosestByPath(FIND_DROPPED_ENERGY);
+                if (dropenergy) {
+                    if (creep.pickup(dropenergy) == ERR_NOT_IN_RANGE) {
+                        creep.moveTo(dropenergy)
+                    }
+                }
+                else {
+                    var container = creep.pos.findClosestByPath(FIND_STRUCTURES, {
+                        filter: (s) => s.structureType == STRUCTURE_CONTAINER
+                        && s.store[RESOURCE_ENERGY] < s.storeCapacity});
+                    if (container != undefined) {
+                        if (creep.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                            creep.moveTo(container);
+                        }
                     }
                 }
             }
