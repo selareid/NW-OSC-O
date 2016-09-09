@@ -11,6 +11,7 @@ module.exports.loop = function() {
     var minimumNumberOfWallRepairers = 2;
     var minimumNumberOfClaimers = 0;
     var minimumNumberOfOtherRoomCreeps = 5;
+    var minimumNumberOfEnergyThiefs = 0;
     var minimumNumberOfInvaders = 0;
 
     var maximumNumberOfHarvesters = 7;
@@ -32,9 +33,10 @@ module.exports.loop = function() {
     var numberOfBuilders = _.sum(Game.creeps, (c) => c.memory.role == 'builder');
     var numberOfRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'repairer');
     var numberOfWallRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer');
-    var numberOfClaimers = _.sum(Game.creeps, (c) => c.memory.role == '' + 'claimer');
-    var numberOfOtherRoomCreeps = _.sum(Game.creeps, (c) => c.memory.role == '' + 'otherRoomCreep');
-    var numberOfInvaders = _.sum(Game.creeps, (c) => c.memory.role == '' + 'invader');
+    var numberOfClaimers = _.sum(Game.creeps, (c) => c.memory.role == 'claimer');
+    var numberOfOtherRoomCreeps = _.sum(Game.creeps, (c) => c.memory.role == 'otherRoomCreep');
+    var numberOfEnergyThiefs = _.sum(Game.creeps, (c) => c.memory.role == 'enegyThief')
+    var numberOfInvaders = _.sum(Game.creeps, (c) => c.memory.role == 'invader');
 
 
     var energy = Game.spawns.Spawn1.room.energyAvailable;
@@ -80,6 +82,9 @@ module.exports.loop = function() {
         else if (numberOfOtherRoomCreeps < minimumNumberOfOtherRoomCreeps) {
             name = Game.spawns.Spawn1.createCustomCreep(energy, 'otherRoomCreep', amountToSave);
         }
+        else if (numberOfEnergyThiefs < minimumNumberOfEnergyThiefs) {
+            name = Game.spawns.Spawn1.createCustomCreep(energy, 'energyThief', amountToSave);
+        }
         else if (numberOfInvaders < minimumNumberOfInvaders) {
             name = Game.spawns.Spawn1.createCustomCreep(energy, 'invader', amountToSave);
         }
@@ -95,7 +100,7 @@ module.exports.loop = function() {
         else if (numberOfRepairers < maximumNumberOfFallBack) {
             name = Game.spawns.Spawn1.createCustomCreep(energy, 'repairer', amountToSave);
         }
-        else if (numberOfOtherRoomCreeps , maximumNumberOfOtherRoomCreeps) {
+        else if (numberOfOtherRoomCreeps < maximumNumberOfOtherRoomCreeps) {
             name = Game.spawns.Spawn1.createCustomCreep(energy, 'otherRoomCreep', amountToSave);
         }
 
