@@ -1,5 +1,5 @@
 var AISpawner = require ('AI.spawner');
-//test
+
 var roleHarvester = require ('role.harvester');
 var roleDistributor = require ('role.distributor');
 var roleEnergyMover = require ('role.energyMover');
