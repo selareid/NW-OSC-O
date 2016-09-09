@@ -10,13 +10,14 @@ module.exports.loop = function() {
     var minimumNumberOfRepairers = 2;
     var minimumNumberOfWallRepairers = 2;
     var minimumNumberOfClaimers = 0;
+    var minimumNumberOfOtherRoomCreeps = 5;
     var minimumNumberOfInvaders = 0;
 
     var maximumNumberOfHarvesters = 7;
     var maximumNumberOfDistributors = 5;
     var maximumNumberOfEnergyMovers = 1;
     var maximumNumberOfFallBack = 2;
-    
+    var maximumNumberOfOtherRoomCreeps = 10;
     
     if (Memory.aYIT == true) {
         console.log('ur dead');
@@ -32,6 +33,7 @@ module.exports.loop = function() {
     var numberOfRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'repairer');
     var numberOfWallRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer');
     var numberOfClaimers = _.sum(Game.creeps, (c) => c.memory.role == '' + 'claimer');
+    var numberOfOtherRoomCreeps = _.sum(Game.creeps, (c) => c.memory.role == '' + 'otherRoomCreep');
     var numberOfInvaders = _.sum(Game.creeps, (c) => c.memory.role == '' + 'invader');
 
 
@@ -75,6 +77,9 @@ module.exports.loop = function() {
         else if (numberOfClaimers < minimumNumberOfClaimers) {
             name = Game.spawns.Spawn1.createCustomCreep(energy, 'claimer', amountToSave);
         }
+        else if (numberOfOtherRoomCreeps < minimumNumberOfOtherRoomCreeps) {
+            name = Game.spawns.Spawn1.createCustomCreep(energy, 'otherRoomCreep', amountToSave);
+        }
         else if (numberOfInvaders < minimumNumberOfInvaders) {
             name = Game.spawns.Spawn1.createCustomCreep(energy, 'invader', amountToSave);
         }
@@ -89,6 +94,9 @@ module.exports.loop = function() {
         }
         else if (numberOfRepairers < maximumNumberOfFallBack) {
             name = Game.spawns.Spawn1.createCustomCreep(energy, 'repairer', amountToSave);
+        }
+        else if (numberOfOtherRoomCreeps , maximumNumberOfOtherRoomCreeps) {
+            name = Game.spawns.Spawn1.createCustomCreep(energy, 'otherRoomCreep', amountToSave);
         }
 
         if (name != undefined && -4 && -6) {
@@ -125,6 +133,7 @@ module.exports.loop = function() {
         Game.notify('You Have ' + numberOfRepairers + ' repairers');
         Game.notify('You Have ' + numberOfWallRepairers + ' wall repairers');
         Game.notify('You Have ' + numberOfClaimers + ' claimers');
+        Game.notify('You Have ' + numberOfOtherRoomCreeps + ' other room creeps');
         Game.notify('You Have ' + numberOfInvaders + ' invaders');
 
         console.log('timeofnextupdate = now. Game Time = ' + Game.time + '. Next Update In ' + (Game.time + timeTillNextUpdate));

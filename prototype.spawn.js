@@ -82,6 +82,17 @@ module.exports = function () {
                     body.push(CLAIM);
                     return this.createCreep(body, undefined, {role: roleName, working: false});
                 }
+                else if (roleName == 'otherRoomCreep') {
+                    numberOfParts = Math.floor((energy - (energy * amountToSave)) / 200);
+
+                    for (let i = 0; i < numberOfParts; i++) {
+                        body.push(WORK);
+                        body.push(CARRY);
+                        body.push(MOVE);
+                    }
+
+                    return this.createCreep(body, undefined, {role: roleName, type: undefined, working: false});
+                }
                 else if (roleName == 'invader') {
                     numberOfParts = Math.floor((energy - (energy * amountToSave)) / 380);
 
