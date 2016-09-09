@@ -1,6 +1,7 @@
-var type1 = require ('role.type1');
-var type2 = require ('role.type2');
-var type3 = require ('role.type3');
+var type1 = require ('role.type1'); //RCL upgrader
+var type2 = require ('role.type2'); //builder
+var type3 = require ('role.type3'); //repairer
+var type4 = require ('role.type4'); //wallRepairer and tower replenisher
 
 module.exports = {
     run: function (creep, roomToGoTo) {
@@ -26,6 +27,9 @@ module.exports = {
                     if (_.sum(Game.creeps, (c) => c.memory.type == 'type3') < 2) {
                         creep.memory.type = 'type3';
                     }
+                    if (_.sum(Game.creeps, (c) => c.memory.type == 'type4') < 2) {
+                        creep.memory.type = 'type4';
+                    }
                     else {creep.memory.type = 'type3';}
                 }
                 else {
@@ -37,6 +41,9 @@ module.exports = {
                     }
                     else if (creep.memory.type == 'type3') {
                         type3.run(creep);
+                    }
+                    else if (creep.memory.type == 'type4') {
+                        type4.run(creep);
                     }
                 }
 

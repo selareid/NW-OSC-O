@@ -18,7 +18,7 @@ module.exports.loop = function() {
     var maximumNumberOfDistributors = 5;
     var maximumNumberOfEnergyMovers = 1;
     var maximumNumberOfFallBack = 2;
-    var maximumNumberOfOtherRoomCreeps = 10;
+    var maximumNumberOfOtherRoomCreeps = 15;
     
     if (Memory.aYIT == true) {
         console.log('ur dead');

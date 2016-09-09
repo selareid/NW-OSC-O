@@ -1,8 +1,7 @@
-var type1 = require ('role.type1');
+var type2 = require ('role.type2');
 
 module.exports = {
     run: function(creep) {
-
         if (creep.memory.working == true && creep.carry.energy == 0) {
             creep.memory.working = false;
         }
@@ -11,10 +10,12 @@ module.exports = {
         }
 
         if (creep.memory.working == true) {
-            var structure = creep.pos.findClosestByPath(FIND_CONSTRUCTION_SITES);
+            var percentOfWall = 0.0001;
+            var structure = creep.pos.findClosestByPath(FIND_STRUCTURES,
+                {filter: (s) => s.structureType == STRUCTURE_WALL && s.hits <= s.hitsMax*percentOfWall});
 
             if (structure != undefined) {
-                if (creep.build(structure) == ERR_NOT_IN_RANGE) {
+                if (creep.repair(structure) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(structure);
                 }
             }
@@ -27,7 +28,7 @@ module.exports = {
                     }
                 }
                 else {
-                    type1.run(creep);
+                    type2.run(creep);
                 }
             }
         }
