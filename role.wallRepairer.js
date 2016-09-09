@@ -1,4 +1,4 @@
-var roleRepairer = require ('role.repairer');
+var roleTowerRefiller = require ('role.towerRefiller');
 
 module.exports = {
     run: function(creep) {
@@ -10,7 +10,7 @@ module.exports = {
         }
 
         if (creep.memory.working == true) {
-            var percentOfWall;
+            var percentOfWall = 0.0001;
             var structure = creep.pos.findClosestByPath(FIND_STRUCTURES,
                 {filter: (s) => s.structureType == STRUCTURE_WALL && s.hits <= s.hitsMax*percentOfWall});
 
@@ -20,16 +20,17 @@ module.exports = {
                 }
             }
             else {
-                roleRepairer.run(creep);
+                roleTowerRefiller.run(creep);
             }
-
         }
         else {
-            var source = creep.pos.findClosestByPath(FIND_SOURCES);
-            if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
-                creep.moveTo(source);
-            }
 
+            var dropenergy = creep.pos.findClosestByPath(FIND_DROPPED_ENERGY);
+            if (dropenergy) {
+                if (creep.pickup(dropenergy) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(dropenergy)
+                }
+            }
         }
     }
 };

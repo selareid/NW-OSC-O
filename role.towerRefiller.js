@@ -1,3 +1,5 @@
+var roleRepairer = require ('role.repairer');
+
 module.exports = {
     run: function(creep) {
         if (creep.memory.working == true && creep.carry.energy == 0) {
@@ -7,10 +9,20 @@ module.exports = {
             creep.memory.working = true;
         }
 
-
         if (creep.memory.working == true) {
-            if (creep.upgradeController(Game.spawns.Spawn1.room.controller) == ERR_NOT_IN_RANGE) {
-                creep.moveTo(creep.room.controller);
+
+            var tower = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
+                filter: (s) => s.structureType == STRUCTURE_TOWER
+                && s.energy < s.energyCapacity
+            });
+
+            if (tower != undefined) {
+                if (creep.transfer(tower, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(tower);
+                }
+            }
+            else {
+                roleRepairer.run(creep);
             }
         }
         else {

@@ -1,4 +1,4 @@
-var roleBuilder = require ('role.builder');
+var roleUpgrader = require ('role.upgrader');
 
 module.exports = {
     run: function(creep) {
@@ -10,28 +10,35 @@ module.exports = {
         }
 
         if (creep.memory.working == true) {
-            var hitsOfRampart = 0;
-            var structure = creep.pos.findClosestByPath(FIND_STRUCTURES,
-                {filter: (s) => (((s.structureType == STRUCTURE_RAMPART && s.hits <= 30000)
-                || (s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL && s.structureType != STRUCTURE_RAMPART)))});
-
+            if (Game.spawns.Spawn1.energy < Game.spawns.Spawn1.energyCapacity) {
+                var structure = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
+                    filter: (s) => s.structureType == STRUCTURE_SPAWN
+                    && s.energy < s.energyCapacity
+                });
+            }
+            else {
+                var structure = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
+                    filter: (s) => (s.structureType == STRUCTURE_EXTENSION || s.structureType == STRUCTURE_TOWER)
+                    && s.energy < s.energyCapacity
+                });
+            }
             if (structure != undefined) {
-                if (creep.repair(structure) == ERR_NOT_IN_RANGE) {
+                if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(structure);
                 }
             }
             else {
-                roleBuilder.run(creep);
+            roleUpgrader.run(creep);
             }
         }
         else {
-
             var dropenergy = creep.pos.findClosestByPath(FIND_DROPPED_ENERGY);
             if (dropenergy) {
                 if (creep.pickup(dropenergy) == ERR_NOT_IN_RANGE) {
                     creep.moveTo(dropenergy)
                 }
             }
+
         }
     }
 };
