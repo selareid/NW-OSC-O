@@ -1,7 +1,5 @@
-var roleUpgrader = require ('role.upgrader');
-
 module.exports = {
-    run: function(creep) {
+    run: function (creep) {
         if (creep.memory.working == true && creep.carry.energy == 0) {
             creep.memory.working = false;
         }
@@ -28,7 +26,17 @@ module.exports = {
                 }
             }
             else {
-            roleUpgrader.run(creep);
+                var structure = creep.pos.findClosestByPath(FIND_STRUCTURES, {
+                    filter: (s) => s.structureType == STRUCTURE_CONTAINER
+                    && s.store[RESOURCE_ENERGY] < s.storeCapacity});
+                if (structure != undefined) {
+                    if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                        creep.moveTo(structure);
+                    }
+                }
+                else {
+                    creep.moveTo(41, 47)
+                }
             }
         }
         else {

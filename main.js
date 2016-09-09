@@ -8,6 +8,7 @@ var roleBuilder = require ('role.builder');
 var roleRepairer = require ('role.repairer');
 var roleWallRepairer = require ('role.wallRepairer');
 var roleClaimer = require ('role.claimer');
+var roleOtherRoomCreep = require ('role.otherRoomCreep');
 var roleInvader = require ('role.invader');
 
 var runTower = require ('run.tower');
@@ -54,8 +55,12 @@ module.exports.loop = function () {
                 roleWallRepairer.run(creep);
             }
             else if (creep.memory.role == 'claimer') {
-                var roomToClaim = '';
+                var roomToClaim = 'E53N13';
                 roleClaimer.run(creep, roomToClaim);
+            }
+            else if (creep.memory.role == 'otherRoomCreep') {
+                var roomToGoTo = 'E53N13';
+                roleOtherRoomCreep.run(creep, roomToGoTo);
             }
             else if (creep.memory.role == 'invader') {
                 roleInvader.run(creep);
