@@ -3,7 +3,7 @@ module.exports = {
 
         var towerTarget = tower.pos.findClosestByRange(FIND_HOSTILE_CREEPS, {filter: (c) => c.getActiveBodyparts(HEAL) >= 1
         || c.getActiveBodyparts(ATTACK) >= 1
-        || c.owner.username != 'starwar15432'})
+        || (c.owner.username != 'starwar15432' && c.owner.username != 'BuffyNZ')})
 
         if ((towerTarget) != undefined) {
             Memory.aYIT = true;
