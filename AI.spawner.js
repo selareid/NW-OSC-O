@@ -35,7 +35,7 @@ module.exports.loop = function() {
     var numberOfWallRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer');
     var numberOfClaimers = _.sum(Game.creeps, (c) => c.memory.role == 'claimer');
     var numberOfOtherRoomCreeps = _.sum(Game.creeps, (c) => c.memory.role == 'otherRoomCreep');
-    var numberOfEnergyThiefs = _.sum(Game.creeps, (c) => c.memory.role == 'enegyThief')
+    var numberOfEnergyThiefs = _.sum(Game.creeps, (c) => c.memory.role == 'energyThief')
     var numberOfInvaders = _.sum(Game.creeps, (c) => c.memory.role == 'invader');
 
 

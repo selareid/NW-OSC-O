@@ -33,7 +33,6 @@ module.exports.loop = function () {
             creep.move(RIGHT);
         }
 
-
             if (creep.memory.role == 'harvester') {
                 roleHarvester.run(creep);
             }
