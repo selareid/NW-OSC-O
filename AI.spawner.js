@@ -143,7 +143,7 @@ module.exports.loop = function() {
         Game.notify('You Have ' + numberOfOtherRoomCreeps + ' other room creeps');
         Game.notify('You Have ' + numberOfInvaders + ' invaders');
 
-        console.log('timeofnextupdate = now. Game Time = ' + Game.time + '. Next Update In ' + (time + timeTillNextUpdate));
+        console.log('timeofnextupdate = now. Time = ' + time + '. Next Update In ' + (time + timeTillNextUpdate));
         Game.spawns.Spawn1.memory.timeofnextupdate = time + timeTillNextUpdate;
     }
 
