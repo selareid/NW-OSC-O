@@ -72,7 +72,7 @@ module.exports.loop = function () {
                 roleInvader.run(creep);
             }
             else {
-                console.log('unknown creep type ' + creep.memory.role);
+                console.log('ERR UNKNOWN CREEP TYPE ' + creep.memory.role + ' Creep name = ' + creep.name);
             }
 
 }
