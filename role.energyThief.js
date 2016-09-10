@@ -101,7 +101,7 @@ module.exports = {
                     }
 
                     if (creep.memory.working == true) {
-                        var site = creep.findClosestByPath(FIND_CONSTRUCTION_SITES);
+                        var site = creep.pos.findClosestByPath(FIND_CONSTRUCTION_SITES);
                         if (site != undefined) {
                             if (creep.build(site) == ERR_NOT_IN_RANGE) {
                                 creep.moveTo(site);
