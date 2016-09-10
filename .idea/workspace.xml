@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8268dfaa-b268-42c3-a0a0-cdd4ad7c4cda" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AI.spawner.js" afterPath="$PROJECT_DIR$/AI.spawner.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.js" afterPath="$PROJECT_DIR$/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/prototype.spawn.js" afterPath="$PROJECT_DIR$/prototype.spawn.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/role.energyThief.js" afterPath="$PROJECT_DIR$/role.energyThief.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/role.type2.js" afterPath="$PROJECT_DIR$/role.type2.js" />
     </list>
     <ignored path="myScreepsCode.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,11 +35,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="role.energyThief.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AI.spawner.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/AI.spawner.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="606">
+              <caret line="147" column="5" selection-start-line="147" selection-start-column="5" selection-end-line="147" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="role.energyThief.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/role.energyThief.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+            <state relative-caret-position="365">
+              <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -68,10 +74,10 @@
         <option value="$PROJECT_DIR$/role.type4.js" />
         <option value="$PROJECT_DIR$/role.otherRoomCreep.js" />
         <option value="$PROJECT_DIR$/main.js" />
-        <option value="$PROJECT_DIR$/AI.spawner.js" />
         <option value="$PROJECT_DIR$/prototype.spawn.js" />
         <option value="$PROJECT_DIR$/role.type2.js" />
         <option value="$PROJECT_DIR$/role.energyThief.js" />
+        <option value="$PROJECT_DIR$/AI.spawner.js" />
       </list>
     </option>
   </component>
@@ -211,12 +217,12 @@
       <updated>1473452989412</updated>
       <workItem from="1473452998593" duration="603000" />
       <workItem from="1473457986243" duration="1003000" />
-      <workItem from="1473460170954" duration="3935000" />
+      <workItem from="1473460170954" duration="4547000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5541000" />
+    <option name="totallyTimeSpent" value="6153000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="427" y="173" width="1491" height="830" extended-state="0" />
@@ -369,14 +375,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AI.spawner.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -419,8 +417,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/role.energyThief.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+        <state relative-caret-position="365">
+          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AI.spawner.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="606">
+          <caret line="147" column="5" selection-start-line="147" selection-start-column="5" selection-end-line="147" selection-end-column="5" />
           <folding />
         </state>
       </provider>

@@ -114,8 +114,10 @@ module.exports.loop = function() {
     //update me on current situation
     //about one hour = 1028 game ticks
     var timeOfNextUpdate = Game.spawns.Spawn1.memory.timeofnextupdate;
-    var timeTillNextUpdate = 1028;
+    var timeTillNextUpdate = 1;
 
+    var d = new Date();
+    var time = d.getHours();
 
     if (numberOfHarvesters <= 0) {
         Game.notify("No harvesters you're in trouble");
@@ -127,7 +129,7 @@ module.exports.loop = function() {
     }
 
 
-    if (Game.time >= timeOfNextUpdate) {
+    if (time >= timeOfNextUpdate) {
         Game.notify('You Controller Level Is ' + Game.spawns.Spawn1.room.controller.level);
         Game.notify('And Your Progress Needed Is ' + (Game.spawns.Spawn1.room.controller.progressTotal - Game.spawns.Spawn1.room.controller.progress));
         Game.notify('You Have ' + numberOfHarvesters + ' harvesters');
@@ -141,8 +143,8 @@ module.exports.loop = function() {
         Game.notify('You Have ' + numberOfOtherRoomCreeps + ' other room creeps');
         Game.notify('You Have ' + numberOfInvaders + ' invaders');
 
-        console.log('timeofnextupdate = now. Game Time = ' + Game.time + '. Next Update In ' + (Game.time + timeTillNextUpdate));
-        Game.spawns.Spawn1.memory.timeofnextupdate = Game.time + timeTillNextUpdate;
+        console.log('timeofnextupdate = now. Game Time = ' + Game.time + '. Next Update In ' + (time + timeTillNextUpdate));
+        Game.spawns.Spawn1.memory.timeofnextupdate = time + timeTillNextUpdate;
     }
 
 };
