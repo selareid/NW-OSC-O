@@ -11,7 +11,7 @@ module.exports.loop = function() {
     var minimumNumberOfWallRepairers = 2;
     var minimumNumberOfClaimers = 0;
     var minimumNumberOfOtherRoomCreeps = 5;
-    var minimumNumberOfEnergyThiefs = 0;
+    var minimumNumberOfEnergyThiefs = 1;
     var minimumNumberOfInvaders = 0;
 
     var maximumNumberOfHarvesters = 7;

@@ -64,8 +64,9 @@ module.exports.loop = function () {
                 roleOtherRoomCreep.run(creep, roomToGoTo);
             }
             else if (creep.memory.role == 'energyThief') {
-                var roomToGoTo = '';
-                roleEnergyThief.run(creep, roomToGoTo);
+                var roomToGoTo = 'E53N13';
+                var roomToTakeFrom = 'E52N13';
+                roleEnergyThief.run(creep, roomToGoTo, roomToTakeFrom);
             }
             else if (creep.memory.role == 'invader') {
                 roleInvader.run(creep);

@@ -102,15 +102,13 @@ module.exports = function () {
                         body.push(MOVE);
                     }
 
-                    return this.createCreep(body, undefined, {role: roleName, type: undefined, working: false});
+                    return this.createCreep(body, undefined, {role: roleName, goingHome: false, working: false});
                 }
                 else if (roleName == 'invader') {
                     numberOfParts = Math.floor((energy - (energy * amountToSave)) / 380);
 
                      for (let i = 0; i < numberOfParts; i++) {
                     body.push(MOVE);
-                    body.push(MOVE);
-                    body.push(ATTACK);
                     body.push(ATTACK);
                     }
                     return this.createCreep(body, undefined, {role: roleName, working: false});

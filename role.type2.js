@@ -19,7 +19,7 @@ module.exports = {
                 }
             }
             else {
-                var tower = creep.findClosestByPath(FIND_MY_STRUCTURES, {filter: (t) => t.structureType == STRUCTURE_TOWER
+                var tower = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {filter: (t) => t.structureType == STRUCTURE_TOWER
                 && t.energy < t.energyCapacity});
                 if (tower != undefined) {
                     if (creep.transfer(tower, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
