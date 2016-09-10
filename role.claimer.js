@@ -2,7 +2,7 @@ module.exports = {
     run: function (creep, roomToClaim) {
         
         if (creep.room.name == Game.spawns.Spawn1.room.name) {
-            if (creep.y == 49) {
+            if (creep.pos.y == 49) {
                 creep.move(BOTTOM);
                 creep.move(BOTTOM);
                 creep.move(BOTTOM);
@@ -13,7 +13,7 @@ module.exports = {
             }
         }
         else if (creep.room.name == roomToClaim) {
-            if (creep.y == 0) {
+            if (creep.pos.y == 0) {
                 creep.move(BOTTOM);
                 creep.move(BOTTOM);
                 creep.move(BOTTOM);
