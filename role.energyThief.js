@@ -84,6 +84,7 @@ module.exports = {
             }
         }
         else if (creep.room.name == roomToTakeFrom) {
+
             if (creep.memory.goingHome == false) {
                 if (creep.pos.x == 0) {
                     creep.move(LEFT);
@@ -91,20 +92,22 @@ module.exports = {
                     creep.move(LEFT);
                     creep.move(LEFT);
                 }
-                if (creep.memory.working == true && creep.carry.energy == 0) {
-                    creep.memory.working = false;
-                }
-                else if (creep.memory.working == false && creep.carry.energy >= creep.carryCapacity) {
-                    creep.memory.working = true;
-                }
-
-                if (creep.memory.working == true) {
-                    creep.memory.goingHome == true;
-                }
                 else {
-                    var source = creep.pos.findClosestByPath(FIND_SOURCES);
-                    if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
-                        creep.moveTo(source);
+                    if (creep.memory.working == true && creep.carry.energy == 0) {
+                        creep.memory.working = false;
+                    }
+                    else if (creep.memory.working == false && creep.carry.energy >= creep.carryCapacity) {
+                        creep.memory.working = true;
+                    }
+
+                    if (creep.memory.working == true) {
+                        creep.memory.goingHome == true;
+                    }
+                    else {
+                        var source = creep.pos.findClosestByPath(FIND_SOURCES);
+                        if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
+                            creep.moveTo(source);
+                        }
                     }
                 }
             }
@@ -119,6 +122,7 @@ module.exports = {
                     creep.moveTo(creep.pos.findClosestByRange(creep.room.findExitTo(roomToGoTo)));
                 }
             }
+            console.log(creep.memory.working);
         }
     }
 };

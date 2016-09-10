@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8268dfaa-b268-42c3-a0a0-cdd4ad7c4cda" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/role.claimer.js" afterPath="$PROJECT_DIR$/role.claimer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/role.energyThief.js" afterPath="$PROJECT_DIR$/role.energyThief.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/role.otherRoomCreep.js" afterPath="$PROJECT_DIR$/role.otherRoomCreep.js" />
     </list>
     <ignored path="myScreepsCode.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,11 +25,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+            <state relative-caret-position="330">
+              <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="role.energyThief.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/role.energyThief.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="124" column="44" selection-start-line="124" selection-start-column="44" selection-end-line="124" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -200,12 +208,12 @@
       <updated>1473452989412</updated>
       <workItem from="1473452998593" duration="603000" />
       <workItem from="1473457986243" duration="1003000" />
-      <workItem from="1473460170954" duration="6394000" />
+      <workItem from="1473460170954" duration="6732000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8000000" />
+    <option name="totallyTimeSpent" value="8338000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="427" y="173" width="1491" height="830" extended-state="0" />
@@ -406,18 +414,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/role.energyThief.js">
+    <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="330">
+          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.js">
+    <entry file="file://$PROJECT_DIR$/role.energyThief.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+        <state relative-caret-position="630">
+          <caret line="124" column="44" selection-start-line="124" selection-start-column="44" selection-end-line="124" selection-end-column="44" />
           <folding />
         </state>
       </provider>
