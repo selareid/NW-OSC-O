@@ -1,16 +1,27 @@
 module.exports = {
-    run: function (creep, roomToClaim) {
-        
+    run: function (creep, middleRoom, roomToClaim) {
+
         if (creep.room.name == Game.spawns.Spawn1.room.name) {
-            if (creep.pos.y == 49) {
-                creep.move(BOTTOM);
-                creep.move(BOTTOM);
-                creep.move(BOTTOM);
-                creep.move(BOTTOM);
-            }
-            else {
-                creep.moveTo(creep.pos.findClosestByRange(creep.room.findExitTo(roomToClaim)));
-            }
+                if (creep.pos.y == 49) {
+                    creep.move(BOTTOM);
+                    creep.move(BOTTOM);
+                    creep.move(BOTTOM);
+                    creep.move(BOTTOM);
+                }
+                else {
+                    creep.moveTo(creep.pos.findClosestByRange(creep.room.findExitTo(roomToGoTo)));
+                } 
+        }
+        else if (creep.room.name == middleRoom) {
+                if (creep.pos.y == 0) {
+                    creep.move(BOTTOM);
+                    creep.move(BOTTOM);
+                    creep.move(BOTTOM);
+                    creep.move(BOTTOM);
+                }
+                else {
+                    creep.moveTo(creep.pos.findClosestByRange(creep.room.findExitTo(roomToTakeFrom)));
+                }
         }
         else if (creep.room.name == roomToClaim) {
             if (creep.pos.y == 0) {
