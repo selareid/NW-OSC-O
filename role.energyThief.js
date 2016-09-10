@@ -101,7 +101,7 @@ module.exports = {
                     }
 
                     if (creep.memory.working == true) {
-                        creep.memory.goingHome == true;
+                        creep.memory.goingHome = true;
                     }
                     else {
                         var source = creep.pos.findClosestByPath(FIND_SOURCES);
@@ -122,7 +122,6 @@ module.exports = {
                     creep.moveTo(creep.pos.findClosestByRange(creep.room.findExitTo(roomToGoTo)));
                 }
             }
-            console.log(creep.memory.working);
         }
     }
 };
