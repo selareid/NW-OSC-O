@@ -101,7 +101,15 @@ module.exports = {
                     }
 
                     if (creep.memory.working == true) {
-                        creep.memory.goingHome = true;
+                        var site = creep.findClosestByPath(FIND_CONSTRUCTION_SITES);
+                        if (site != undefined) {
+                            if (creep.build(site) == ERR_NOT_IN_RANGE) {
+                                creep.moveTo(site);
+                            }
+                        }
+                        else {
+                            creep.memory.goingHome = true;
+                        }
                     }
                     else {
                         var source = creep.pos.findClosestByPath(FIND_SOURCES);
