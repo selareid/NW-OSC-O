@@ -108,7 +108,18 @@ module.exports = {
                             }
                         }
                         else {
+                            var structure = creep.pos.findClosestByPath(FIND_STRUCTURES,
+                {filter: (s) => (((s.structureType == STRUCTURE_RAMPART && s.hits <= 30000)
+                || (s.hits < s.hitsMax && s.structureType != STRUCTURE_WALL && s.structureType != STRUCTURE_RAMPART)))});
+
+            if (structure != undefined) {
+                if (creep.repair(structure) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(structure);
+                }
+            }
+            else {
                             creep.memory.goingHome = true;
+            }
                         }
                     }
                     else {
