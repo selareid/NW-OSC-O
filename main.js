@@ -90,8 +90,6 @@ module.exports.loop = function () {
                     roleInvader.run(creep, mainSpawn);
                 }
                 else {
-                    creep.memory.role = 'harvester';
-                    creep.memory.working= false;
                     console.log('ERR UNKNOWN CREEP TYPE ' + creep.memory.role + ' Creep name = ' + creep.name);
                 }
 
