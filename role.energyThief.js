@@ -86,7 +86,7 @@ module.exports = {
         else if (creep.room.name == roomToTakeFrom) {
 
             if (creep.memory.goingHome == false) {
-                if (creep.pos.x == 0) {
+                if (creep.pos.x == 49) {
                     creep.move(LEFT);
                     creep.move(LEFT);
                     creep.move(LEFT);
