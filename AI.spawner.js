@@ -5,7 +5,7 @@ module.exports.loop = function(spawn, mainSpawn) {
     var minimumNumberOfHarvesters = 5;
     var minimumNumberOfDistributors = 3;
     var minimumNumberOfEnergyMovers = 0;
-    var minimumNumberOfUpgraders = 3;
+    var minimumNumberOfUpgraders = 4;
     var minimumNumberOfBuilders = 1;
     var minimumNumberOfRepairers = 2;
     var minimumNumberOfWallRepairers = 2;
@@ -53,7 +53,7 @@ module.exports.loop = function(spawn, mainSpawn) {
     }
 
 
-    if (Game.spawns.Spawn1.spawning != true && Game.spawns.Spawn1.energy >= 300 && (energy - (energy * amountToSave)) >= 300) {
+    if (spawn.spawning != true && spawn.energy >= 300 && (energy - (energy * amountToSave)) >= 300) {
 
         if (numberOfHarvesters < minimumNumberOfHarvesters) {
             name = spawn.createCustomCreep(energy, 'harvester', amountToSave);
