@@ -30,13 +30,14 @@ module.exports.loop = function () {
 
         if (spawn != undefined) {
             var numberOfHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.room == spawn.room);
-            if (numberOfHarvesters <= 0) {
-                creep.memory.role = 'harvester';
-            }
             
             for (let name in Game.creeps) {
                 var creep = Game.creeps[name];
-
+                
+                if (numberOfHarvesters <= 0) {
+                creep.memory.role = 'harvester';
+            }
+                
                 if (creep.memory.role == 'harvester') {
                     creep.say('HARVEST!');
                     roleHarvester.run(creep, spawn);
