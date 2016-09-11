@@ -10,15 +10,15 @@ module.exports.loop = function(spawn, mainSpawn) {
     var minimumNumberOfRepairers = 2;
     var minimumNumberOfWallRepairers = 2;
     var minimumNumberOfClaimers = 2;
-    var minimumNumberOfOtherRoomCreeps = 5;
+    var minimumNumberOfOtherRoomCreeps = 3;
     var minimumNumberOfEnergyThiefs = 1;
     var minimumNumberOfInvaders = 0;
 
     var maximumNumberOfHarvesters = 7;
     var maximumNumberOfDistributors = 5;
     var maximumNumberOfEnergyMovers = 1;
-    var maximumNumberOfFallBack = 2;
-    var maximumNumberOfOtherRoomCreeps = 15;
+    var maximumNumberOfFallBack = 4;
+    var maximumNumberOfOtherRoomCreeps = 3;
 
     if (Memory.aYIT == true) {
         console.log('ur dead');
