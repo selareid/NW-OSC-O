@@ -58,10 +58,6 @@ module.exports.loop = function () {
                 var roomToClaim = 'E52N13';
                 roleClaimer.run(creep, mainSpawn, roomToGoTo, roomToClaim);
 
-                var roomToClaim = 'E52N13';
-                var middleRoom = 'E53N13';
-                roleClaimer.run(creep, middleRoom, roomToClaim);
-
             }
             else if (creep.memory.role == 'otherRoomCreep') {
                 var roomInPath = 'E53N13';

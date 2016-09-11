@@ -1,32 +1,7 @@
 module.exports = {
-<<<<<<< HEAD
-    run: function (creep, spawn, roomToGoTo, roomToClaim) {
-        
-        if (creep.room.name == spawn.room.name) {
-            if (creep.pos.y == 49) {
-                creep.move(BOTTOM);
-                creep.move(BOTTOM);
-                creep.move(BOTTOM);
-                creep.move(BOTTOM);
-            }
-            else {
-                creep.moveTo(creep.pos.findClosestByRange(creep.room.findExitTo(roomToGoTo)));
-            }
-        }
-        if (creep.room.name == spawn.room.name) {
-            if (creep.pos.y == 0) {
-                creep.move(BOTTOM);
-                creep.move(BOTTOM);
-                creep.move(BOTTOM);
-                creep.move(BOTTOM);
-            }
-            else {
-                creep.moveTo(creep.pos.findClosestByRange(creep.room.findExitTo(roomToClaim)));
-            }
-=======
-    run: function (creep, middleRoom, roomToClaim) {
+    run: function (creep, spawn, middleRoom, roomToClaim) {
 
-        if (creep.room.name == Game.spawns.Spawn1.room.name) {
+        if (creep.room.name == spawn.room.name) {
                 if (creep.pos.y == 49) {
                     creep.move(BOTTOM);
                     creep.move(BOTTOM);
@@ -34,7 +9,7 @@ module.exports = {
                     creep.move(BOTTOM);
                 }
                 else {
-                    creep.moveTo(creep.pos.findClosestByRange(creep.room.findExitTo(roomToGoTo)));
+                    creep.moveTo(creep.pos.findClosestByRange(creep.room.findExitTo(middleRoom)));
                 } 
         }
         else if (creep.room.name == middleRoom) {
@@ -45,9 +20,9 @@ module.exports = {
                     creep.move(BOTTOM);
                 }
                 else {
-                    creep.moveTo(creep.pos.findClosestByRange(creep.room.findExitTo(roomToTakeFrom)));
+                    creep.moveTo(creep.pos.findClosestByRange(creep.room.findExitTo(roomToClaim)));
                 }
->>>>>>> origin/In-Use-Now
+
         }
         else if (creep.room.name == roomToClaim) {
             if (creep.pos.x == 49) {
