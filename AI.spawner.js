@@ -2,7 +2,7 @@ require('prototype.spawn')();
 
 module.exports.loop = function(spawn, mainSpawn) {
 
-    var minimumNumberOfHarvesters = 3;
+    var minimumNumberOfHarvesters = 2;
     var minimumNumberOfDistributors = 3;
     var minimumNumberOfEnergyMovers = 0;
     var minimumNumberOfUpgraders = 3;
