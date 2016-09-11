@@ -12,7 +12,7 @@ module.exports = {
         if (creep.memory.working == true) {
             var numberOfDistributors = _.sum(Game.creeps, (c) => c.memory.role == 'distributor' && c.room == spawn.room);
             if (numberOfDistributors <= 0) {
-                roleEmergencyHarvester.run
+                roleEmergencyHarvester.run(creep, spawn);
             }
             else {
             creep.drop(RESOURCE_ENERGY);
