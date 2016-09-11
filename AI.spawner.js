@@ -19,7 +19,7 @@ module.exports.loop = function(spawn, mainSpawn) {
     var maximumNumberOfEnergyMovers = 1;
     var maximumNumberOfFallBack = 2;
     var maximumNumberOfOtherRoomCreeps = 15;
-    
+
     if (Memory.aYIT == true) {
         console.log('ur dead');
         Game.notify('ur totally dead');
@@ -37,7 +37,6 @@ module.exports.loop = function(spawn, mainSpawn) {
     var numberOfOtherRoomCreeps = _.sum(Game.creeps, (c) => c.memory.role == 'otherRoomCreep');
     var numberOfEnergyThiefs = _.sum(Game.creeps, (c) => c.memory.role == 'energyThief')
     var numberOfInvaders = _.sum(Game.creeps, (c) => c.memory.role == 'invader' && c.room == spawn.room);
-
 
 
     var energy = spawn.room.energyAvailable;
@@ -119,12 +118,12 @@ module.exports.loop = function(spawn, mainSpawn) {
     var time = Game.time;
 
     if (numberOfHarvesters <= 0) {
-        Game.notify("No harvesters in room " +  spawn.room);
-        console.log("No harvesters in room " +  spawn.room);
+        Game.notify("No harvesters in room " + spawn.room);
+        console.log("No harvesters in room " + spawn.room);
     }
     else if (numberOfDistributors <= 0) {
-        Game.notify("No distributors in room " +  spawn.room);
-        console.log("No distributors in room " +  spawn.room);
+        Game.notify("No distributors in room " + spawn.room);
+        console.log("No distributors in room " + spawn.room);
     }
 
 
