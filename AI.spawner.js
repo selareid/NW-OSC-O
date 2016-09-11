@@ -119,12 +119,12 @@ module.exports.loop = function(spawn, mainSpawn) {
     var time = Game.time;
 
     if (numberOfHarvesters <= 0) {
-        Game.notify("No harvesters you're in trouble");
-        console.log("No distributors you're in trouble");
+        Game.notify("No harvesters in room " +  spawn.room);
+        console.log("No harvesters in room " +  spawn.room);
     }
     else if (numberOfDistributors <= 0) {
-        Game.notify("No distributors you're in trouble");
-        console.log("No distributors you're in trouble");
+        Game.notify("No distributors in room " +  spawn.room);
+        console.log("No distributors in room " +  spawn.room);
     }
 
 

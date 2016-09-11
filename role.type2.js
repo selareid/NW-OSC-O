@@ -27,7 +27,7 @@ module.exports = {
                     }
                 }
                 else {
-                    type1.run(creep);
+                    //type1.run(creep);
                 }
             }
         }

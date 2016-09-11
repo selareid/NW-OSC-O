@@ -10,15 +10,19 @@ module.exports = {
             if (creep.pos.y == 49) {
                 creep.move(BOTTOM);
                 creep.move(BOTTOM);
+                creep.move(BOTTOM);
+                creep.move(BOTTOM);
             }
             else {
                 creep.moveTo(creep.pos.findClosestByRange(creep.room.findExitTo(roomInPath)));
             }
         }
         if (creep.room.name == roomInPath) {
-            if (creep.pos.y == 0) {
-                creep.move(BOTTOM);
-                creep.move(BOTTOM);
+            if (creep.pos.x == 0) {
+                creep.move(LEFT);
+                creep.move(LEFT);
+                creep.move(LEFT);
+                creep.move(LEFT);
             }
             else {
                 creep.moveTo(creep.pos.findClosestByRange(creep.room.findExitTo(roomToGoTo)));
@@ -26,6 +30,9 @@ module.exports = {
         }
         else if (creep.room.name == roomToGoTo) {
                 if (creep.memory.type == undefined) {
+                    creep.move(LEFT);
+                    creep.move(LEFT);
+                    creep.move(LEFT);
                     creep.move(LEFT);
                     /*if (_.sum(Game.creeps, (c) => c.memory.type == 'type1') < 2) {
                         creep.memory.type = 'type1';
