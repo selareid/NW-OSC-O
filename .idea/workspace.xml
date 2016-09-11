@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8268dfaa-b268-42c3-a0a0-cdd4ad7c4cda" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.js" afterPath="$PROJECT_DIR$/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/role.claimer.js" afterPath="$PROJECT_DIR$/role.claimer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/role.builder.js" afterPath="$PROJECT_DIR$/role.builder.js" />
     </list>
     <ignored path="myScreepsCode.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,21 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
               <caret line="58" column="75" selection-start-line="58" selection-start-column="75" selection-end-line="58" selection-end-column="75" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="role.claimer.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/role.claimer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -73,10 +62,10 @@
         <option value="$PROJECT_DIR$/role.wallRepairer.js" />
         <option value="$PROJECT_DIR$/role.towerRefiller.js" />
         <option value="$PROJECT_DIR$/role.repairer.js" />
-        <option value="$PROJECT_DIR$/role.builder.js" />
         <option value="$PROJECT_DIR$/role.otherRoomCreep.js" />
         <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/role.claimer.js" />
+        <option value="$PROJECT_DIR$/role.builder.js" />
       </list>
     </option>
   </component>
@@ -219,12 +208,12 @@
       <workItem from="1473457986243" duration="1003000" />
       <workItem from="1473460170954" duration="7263000" />
       <workItem from="1473555384147" duration="2517000" />
-      <workItem from="1473568112216" duration="135000" />
+      <workItem from="1473568112216" duration="180000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11521000" />
+    <option name="totallyTimeSpent" value="11566000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="500" y="173" width="1418" height="830" extended-state="0" />
@@ -308,6 +297,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -395,13 +385,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/role.builder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/role.distributor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -430,18 +413,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.js">
+    <entry file="file://$PROJECT_DIR$/role.claimer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="58" column="75" selection-start-line="58" selection-start-column="75" selection-end-line="58" selection-end-column="75" />
+        <state relative-caret-position="195">
+          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/role.claimer.js">
+    <entry file="file://$PROJECT_DIR$/role.builder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+        <state relative-caret-position="510">
+          <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="58" column="75" selection-start-line="58" selection-start-column="75" selection-end-line="58" selection-end-column="75" />
           <folding />
         </state>
       </provider>
