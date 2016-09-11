@@ -20,7 +20,17 @@ module.exports = {
                 }
             }
             else {
+                var percentOfWall = 0.001;
+            var structure = creep.pos.findClosestByPath(FIND_STRUCTURES,
+                {filter: (s) => s.structureType == STRUCTURE_WALL && s.hits <= s.hitsMax*percentOfWall});
+
+            if (structure != undefined) {
+                if (creep.repair(structure) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(structure);
+                }
+                else {
                 roleTowerRefiller.run(creep, spawn);
+            }
             }
         }
         else {
