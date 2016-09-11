@@ -1,8 +1,8 @@
 var roleUpgrader = require ('role.upgrader');
 
 module.exports = {
-    run: function(creep) {
-        roleUpgrader.run(creep);
+    run: function(creep, spawn) {
+        roleUpgrader.run(creep, spawn);
         // if (creep.memory.working == true && creep.carry.energy == 0) {
         //     creep.memory.working = false;
         // }

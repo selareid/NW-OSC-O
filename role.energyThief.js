@@ -1,7 +1,7 @@
 module.exports = {
-    run: function (creep, roomToGoTo, roomToTakeFrom) {
+    run: function (creep, spawn, roomToGoTo, roomToTakeFrom) {
 
-        if (creep.room.name == Game.spawns.Spawn1.room.name) {
+        if (creep.room.name == spawn.room.name) {
             if (creep.memory.goingHome == false) {
                 if (creep.pos.y == 49) {
                     creep.move(BOTTOM);
@@ -22,7 +22,7 @@ module.exports = {
                 }
 
                 if (creep.memory.working == true) {
-                    if (Game.spawns.Spawn1.energy < Game.spawns.Spawn1.energyCapacity) {
+                    if (spawn.energy < spawn.energyCapacity) {
                         var structure = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
                             filter: (s) => s.structureType == STRUCTURE_SPAWN
                             && s.energy < s.energyCapacity
@@ -79,7 +79,7 @@ module.exports = {
                     creep.move(TOP);
                 }
                 else {
-                    creep.moveTo(creep.pos.findClosestByRange(creep.room.findExitTo(Game.spawns.Spawn1.room)));
+                    creep.moveTo(creep.pos.findClosestByRange(creep.room.findExitTo(spawn.room)));
                 }
             }
         }

@@ -1,6 +1,6 @@
 require('prototype.spawn')();
 
-module.exports.loop = function() {
+module.exports.loop = function(spawn, mainSpawn) {
 
     var minimumNumberOfHarvesters = 2;
     var minimumNumberOfDistributors = 2;
@@ -26,20 +26,20 @@ module.exports.loop = function() {
         minimumNumberOfInvaders = 10;
     }
 
-    var numberOfHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'harvester');
-    var numberOfDistributors = _.sum(Game.creeps, (c) => c.memory.role == 'distributor');
-    var numberOfEnergyMovers = _.sum(Game.creeps, (c) => c.memory.role == 'energyMover');
-    var numberOfUpgraders = _.sum(Game.creeps, (c) => c.memory.role == 'upgrader');
-    var numberOfBuilders = _.sum(Game.creeps, (c) => c.memory.role == 'builder');
-    var numberOfRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'repairer');
-    var numberOfWallRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer');
+    var numberOfHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'harvester' && c.room == spawn.room);
+    var numberOfDistributors = _.sum(Game.creeps, (c) => c.memory.role == 'distributor' && c.room == spawn.room);
+    var numberOfEnergyMovers = _.sum(Game.creeps, (c) => c.memory.role == 'energyMover' && c.room == spawn.room);
+    var numberOfUpgraders = _.sum(Game.creeps, (c) => c.memory.role == 'upgrader' && c.room == spawn.room);
+    var numberOfBuilders = _.sum(Game.creeps, (c) => c.memory.role == 'builder' && c.room == spawn.room);
+    var numberOfRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'repairer' && c.room == spawn.room);
+    var numberOfWallRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'wallRepairer' && c.room == spawn.room);
     var numberOfClaimers = _.sum(Game.creeps, (c) => c.memory.role == 'claimer');
     var numberOfOtherRoomCreeps = _.sum(Game.creeps, (c) => c.memory.role == 'otherRoomCreep');
     var numberOfEnergyThiefs = _.sum(Game.creeps, (c) => c.memory.role == 'energyThief')
-    var numberOfInvaders = _.sum(Game.creeps, (c) => c.memory.role == 'invader');
+    var numberOfInvaders = _.sum(Game.creeps, (c) => c.memory.role == 'invader' && c.room == spawn.room);
 
 
-    var energy = Game.spawns.Spawn1.room.energyAvailable;
+    var energy = spawn.room.energyAvailable;
     var amountToSave = 0;
     var name = undefined;
 
@@ -56,52 +56,52 @@ module.exports.loop = function() {
     if (Game.spawns.Spawn1.spawning != true && Game.spawns.Spawn1.energy >= 300 && (energy - (energy * amountToSave)) >= 300) {
 
         if (numberOfHarvesters < minimumNumberOfHarvesters) {
-            name = Game.spawns.Spawn1.createCustomCreep(energy, 'harvester', amountToSave);
+            name = spawn.createCustomCreep(energy, 'harvester', amountToSave);
         }
         else if (numberOfDistributors < minimumNumberOfDistributors) {
-            name = Game.spawns.Spawn1.createCustomCreep(energy, 'distributor', amountToSave);
+            name = spawn.createCustomCreep(energy, 'distributor', amountToSave);
         }
         else if (numberOfEnergyMovers < minimumNumberOfEnergyMovers) {
-            name = Game.spawns.Spawn1.createCustomCreep(energy, 'energyMover', amountToSave);
+            name = spawn.createCustomCreep(energy, 'energyMover', amountToSave);
         }
         else if (numberOfUpgraders < minimumNumberOfUpgraders) {
-            name = Game.spawns.Spawn1.createCustomCreep(energy, 'upgrader', amountToSave);
+            name = spawn.createCustomCreep(energy, 'upgrader', amountToSave);
         }
         else if (numberOfBuilders < minimumNumberOfBuilders) {
-            name = Game.spawns.Spawn1.createCustomCreep(energy, 'builder', amountToSave);
+            name = spawn.createCustomCreep(energy, 'builder', amountToSave);
         }
         else if (numberOfRepairers < minimumNumberOfRepairers) {
-            name = Game.spawns.Spawn1.createCustomCreep(energy, 'repairer', amountToSave);
+            name = spawn.createCustomCreep(energy, 'repairer', amountToSave);
         }
         else if (numberOfWallRepairers < minimumNumberOfWallRepairers) {
-            name = Game.spawns.Spawn1.createCustomCreep(energy, 'wallRepairer', amountToSave);
+            name = spawn.createCustomCreep(energy, 'wallRepairer', amountToSave);
         }
         else if (numberOfClaimers < minimumNumberOfClaimers) {
-            name = Game.spawns.Spawn1.createCustomCreep(energy, 'claimer', amountToSave);
+            name = mainSpawn.createCustomCreep(energy, 'claimer', amountToSave);
         }
         else if (numberOfOtherRoomCreeps < minimumNumberOfOtherRoomCreeps) {
-            name = Game.spawns.Spawn1.createCustomCreep(energy, 'otherRoomCreep', amountToSave);
+            name = mainSpawn.createCustomCreep(energy, 'otherRoomCreep', amountToSave);
         }
         else if (numberOfEnergyThiefs < minimumNumberOfEnergyThiefs) {
-            name = Game.spawns.Spawn1.createCustomCreep(energy, 'energyThief', amountToSave);
+            name = mainSpawn.createCustomCreep(energy, 'energyThief', amountToSave);
         }
         else if (numberOfInvaders < minimumNumberOfInvaders) {
-            name = Game.spawns.Spawn1.createCustomCreep(energy, 'invader', amountToSave);
+            name = spawn.createCustomCreep(energy, 'invader', amountToSave);
         }
         else if (numberOfHarvesters < maximumNumberOfHarvesters) {
-            name = Game.spawns.Spawn1.createCustomCreep(energy, 'harvester', amountToSave);
+            name = spawn.createCustomCreep(energy, 'harvester', amountToSave);
         }
         else if (numberOfDistributors < maximumNumberOfDistributors) {
-            name = Game.spawns.Spawn1.createCustomCreep(energy, 'distributor', amountToSave);
+            name = spawn.createCustomCreep(energy, 'distributor', amountToSave);
         }
         else if (numberOfEnergyMovers < maximumNumberOfEnergyMovers) {
-            name = Game.spawns.Spawn1.createCustomCreep(energy, 'energyMover', amountToSave);
+            name = spawn.createCustomCreep(energy, 'energyMover', amountToSave);
         }
         else if (numberOfRepairers < maximumNumberOfFallBack) {
-            name = Game.spawns.Spawn1.createCustomCreep(energy, 'repairer', amountToSave);
+            name = spawn.createCustomCreep(energy, 'repairer', amountToSave);
         }
         else if (numberOfOtherRoomCreeps < maximumNumberOfOtherRoomCreeps) {
-            name = Game.spawns.Spawn1.createCustomCreep(energy, 'otherRoomCreep', amountToSave);
+            name = mainSpawn.createCustomCreep(energy, 'otherRoomCreep', amountToSave);
         }
 
         if (name != undefined && -4 && -6) {
@@ -113,7 +113,7 @@ module.exports.loop = function() {
 
     //update me on current situation
     //about one hour = 1028 game ticks
-    var timeOfNextUpdate = Game.spawns.Spawn1.memory.timeofnextupdate;
+    var timeOfNextUpdate = spawn.memory.timeofnextupdate;
     var timeTillNextUpdate = 1;
 
     var d = new Date();
@@ -130,8 +130,9 @@ module.exports.loop = function() {
 
 
     if (time >= timeOfNextUpdate) {
-        Game.notify('You Controller Level Is ' + Game.spawns.Spawn1.room.controller.level);
-        Game.notify('And Your Progress Needed Is ' + (Game.spawns.Spawn1.room.controller.progressTotal - Game.spawns.Spawn1.room.controller.progress));
+        Game.notify('Room ' + spawn.room);
+        Game.notify('You Controller Level Is ' + spawn.room.controller.level);
+        Game.notify('And Your Progress Needed Is ' + (spawn.room.controller.progressTotal - spawn.room.controller.progress));
         Game.notify('You Have ' + numberOfHarvesters + ' harvesters');
         Game.notify('You Have ' + numberOfDistributors + ' distributors');
         Game.notify('You Have ' + numberOfEnergyMovers + ' energy movers');
@@ -144,7 +145,7 @@ module.exports.loop = function() {
         Game.notify('You Have ' + numberOfInvaders + ' invaders');
 
         console.log('timeofnextupdate = now. Time = ' + time + '. Next Update In ' + (time + timeTillNextUpdate));
-        Game.spawns.Spawn1.memory.timeofnextupdate = time + timeTillNextUpdate;
+        spawn.memory.timeofnextupdate = time + timeTillNextUpdate;
     }
 
 };

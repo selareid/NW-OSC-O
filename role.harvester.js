@@ -1,7 +1,7 @@
 var roleDistributor = require ('role.distributor');
 
 module.exports = {
-    run: function(creep) {
+    run: function(creep, spawn) {
         if (creep.memory.working == true && creep.carry.energy == 0) {
             creep.memory.working = false;
         }

@@ -1,5 +1,5 @@
 module.exports = {
-    run: function (creep) {
+    run: function (creep, spawn) {
         if (creep.memory.working == true && creep.carry.energy == 0) {
             creep.memory.working = false;
         }
@@ -8,7 +8,7 @@ module.exports = {
         }
 
         if (creep.memory.working == true) {
-            if (Game.spawns.Spawn1.energy < Game.spawns.Spawn1.energyCapacity) {
+            if (spawn.energy < spawn.energyCapacity) {
                 var structure = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
                     filter: (s) => s.structureType == STRUCTURE_SPAWN
                     && s.energy < s.energyCapacity

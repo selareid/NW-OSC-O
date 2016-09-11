@@ -17,7 +17,7 @@ module.exports = {
                 }
             }
             else {
-                roleUpgrader.run(creep);
+                roleUpgrader.run(creep, spawn);
             }
         }
         else {
