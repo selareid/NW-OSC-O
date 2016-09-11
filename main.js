@@ -48,15 +48,15 @@ module.exports.loop = function () {
                 roleWallRepairer.run(creep, spawn);
             }
             else if (creep.memory.role == 'claimer') {
-<<<<<<< HEAD
+
                 var roomToGoTo = 'E53N13'
                 var roomToClaim = 'E52N13';
                 roleClaimer.run(creep, mainSpawn, roomToGoTo, roomToClaim);
-=======
+
                 var roomToClaim = 'E52N13';
                 var middleRoom = 'E53N13';
                 roleClaimer.run(creep, middleRoom, roomToClaim);
->>>>>>> origin/In-Use-Now
+
             }
             else if (creep.memory.role == 'otherRoomCreep') {
                 var roomInPath = 'E53N13';
