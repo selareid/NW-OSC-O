@@ -113,6 +113,9 @@ module.exports = function () {
                     }
                     return this.createCreep(body, undefined, {role: roleName, working: false});
                 }
+                else if (roleName == 'claimer') {
+                    return 'TRIED TO SPAWN CLAIMER';
+                }
                 else {
                     return 'SPAWNING ERROR';
                 }

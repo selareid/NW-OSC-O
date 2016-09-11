@@ -39,6 +39,7 @@ module.exports.loop = function(spawn, mainSpawn) {
     var numberOfInvaders = _.sum(Game.creeps, (c) => c.memory.role == 'invader' && c.room == spawn.room);
 
 
+
     var energy = spawn.room.energyAvailable;
     var amountToSave = 0;
     var name = undefined;
@@ -113,11 +114,9 @@ module.exports.loop = function(spawn, mainSpawn) {
 
     //update me on current situation
     //about one hour = 1028 game ticks
-    var timeOfNextUpdate = spawn.memory.timeofnextupdate;
-    var timeTillNextUpdate = 1;
-
-    var d = new Date();
-    var time = d.getHours();
+    var timeOfNextUpdate = Memory.timeofnextupdate;
+    var timeTillNextUpdate = 1028;
+    var time = Game.time;
 
     if (numberOfHarvesters <= 0) {
         Game.notify("No harvesters you're in trouble");
@@ -142,10 +141,11 @@ module.exports.loop = function(spawn, mainSpawn) {
         Game.notify('You Have ' + numberOfWallRepairers + ' wall repairers');
         Game.notify('You Have ' + numberOfClaimers + ' claimers');
         Game.notify('You Have ' + numberOfOtherRoomCreeps + ' other room creeps');
+        Game.notify('You Have ' + numberOfEnergyThiefs + ' energy thiefs');
         Game.notify('You Have ' + numberOfInvaders + ' invaders');
 
         console.log('timeofnextupdate = now. Time = ' + time + '. Next Update In ' + (time + timeTillNextUpdate));
-        spawn.memory.timeofnextupdate = time + timeTillNextUpdate;
+        Memory.timeofnextupdate = time + timeTillNextUpdate;
     }
 
 };
