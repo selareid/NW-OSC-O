@@ -33,6 +33,7 @@ module.exports = {
             }
             }
         }
+        }
         else {
 
             var dropenergy = creep.pos.findClosestByPath(FIND_DROPPED_ENERGY);
