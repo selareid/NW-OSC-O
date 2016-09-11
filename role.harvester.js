@@ -1,4 +1,4 @@
-var roleDistributor = require ('role.distributor');
+var roleEmergencyHarvester = require ('role.emergencyHarvester');
 
 module.exports = {
     run: function(creep, spawn) {
@@ -10,9 +10,13 @@ module.exports = {
         }
 
         if (creep.memory.working == true) {
-
+            var numberOfDistributors = _.sum(Game.creeps, (c) => c.memory.role == 'distributor' && c.room == spawn.room);
+            if (numberOfDistributors <= 0) {
+                roleEmergencyHarvester.run
+            }
+            else {
             creep.drop(RESOURCE_ENERGY);
-
+            }
         }
         else {
             var source = creep.pos.findClosestByPath(FIND_SOURCES);
