@@ -8,6 +8,11 @@ var roleBuilder = require ('role.builder');
 var roleRepairer = require ('role.repairer');
 var roleWallRepairer = require ('role.wallRepairer');
 
+var roleClaimer = require ('role.claimer');
+var roleOtherRoomCreep = require ('role.otherRoomCreep');
+var roleEnergyThief = require ('role.energyThief');
+var roleInvader = require ('role.invader');
+
 var runTower = require ('run.tower');
 
 module.exports.loop = function () {
