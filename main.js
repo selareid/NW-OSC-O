@@ -34,44 +34,54 @@ module.exports.loop = function () {
                 var creep = Game.creeps[name];
 
                 if (creep.memory.role == 'harvester') {
+                    creep.say('HARVEST!');
                     roleHarvester.run(creep, spawn);
                 }
                 else if (creep.memory.role == 'distributor') {
+                    creep.say('DISTRIBUTE!');
                     roleDistributor.run(creep, spawn);
                 }
                 else if (creep.memory.role == 'energyMover') {
+                    creep.say('STORE!');
                     roleEnergyMover.run(creep, spawn);
                 }
                 else if (creep.memory.role == 'upgrader') {
+                    creep.say('UPGRADE!');
                     roleUpgrader.run(creep, spawn);
                 }
                 else if (creep.memory.role == 'builder') {
+                    creep.say('BUILD!');
                     roleBuilder.run(creep, spawn);
                 }
                 else if (creep.memory.role == 'repairer') {
+                    creep.say('REPAIR!');
                     roleRepairer.run(creep, spawn);
                 }
                 else if (creep.memory.role == 'wallRepairer') {
+                    creep.say('WALLS4LYF!');
                     roleWallRepairer.run(creep, spawn);
                 }
                 else if (creep.memory.role == 'claimer') {
-
+                    creep.say('CLAIM!');
                     var roomToGoTo = 'E53N13'
                     var roomToClaim = 'E52N13';
                     roleClaimer.run(creep, mainSpawn, roomToGoTo, roomToClaim);
 
                 }
                 else if (creep.memory.role == 'otherRoomCreep') {
+                    creep.say('THEOTHER1!');
                     var roomInPath = 'E53N13';
                     var roomToGoTo = 'E52N13';
                     roleOtherRoomCreep.run(creep, mainSpawn, roomInPath, roomToGoTo);
                 }
                 else if (creep.memory.role == 'energyThief') {
+                    creep.say('TAKE!');
                     var roomToGoTo = 'E53N13';
                     var roomToTakeFrom = 'E52N13';
                     roleEnergyThief.run(creep, mainSpawn, roomToGoTo, roomToTakeFrom);
                 }
                 else if (creep.memory.role == 'invader') {
+                    creep.say('ALL MINE!');
                     roleInvader.run(creep, mainSpawn);
                 }
                 else {
