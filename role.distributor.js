@@ -35,7 +35,7 @@ module.exports = {
                     }
                 }
                 else {
-                    creep.moveTo(41, 47)
+                    creep.moveTo(spawn);
                 }
             }
         }
