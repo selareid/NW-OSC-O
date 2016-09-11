@@ -75,16 +75,15 @@ module.exports.loop = function () {
             else {
                 console.log('ERR UNKNOWN CREEP TYPE ' + creep.memory.role + ' Creep name = ' + creep.name);
             }
-        }
 
-        AISpawner.loop(spawn, mainSpawn);
+            AISpawner.loop(spawn, mainSpawn);
 
-        var towers = room.find(FIND_STRUCTURES, {
-            filter: (s) => s.structureType == STRUCTURE_TOWER
-        });
-        for (let tower of towers) {
-            runTower.run(tower);
+            var towers = room.find(FIND_STRUCTURES, {
+                filter: (s) => s.structureType == STRUCTURE_TOWER
+            });
+            for (let tower of towers) {
+                runTower.run(tower);
+            }
         }
     }
-
 };
